@@ -3,9 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client/src"),
@@ -13,9 +11,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist",
     target: "ES2020",
-    minify: "esbuild",
-    sourcemap: true,
-  },
-  publicDir: path.resolve(__dirname, "client", "public"),
+  }
 });
