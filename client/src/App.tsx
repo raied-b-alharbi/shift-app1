@@ -2,15 +2,11 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AdminDashboard from "./pages/AdminDashboard";
 import MonthlyReports from "./pages/MonthlyReports";
 import NotificationCenter from "./pages/NotificationCenter";
-import { AuthProvider } from "./contexts/AuthContext";
-import { ScheduleProvider } from "./contexts/ScheduleContext";
-import { NotificationProvider } from "./contexts/NotificationContext";
 
 function Router() {
   return (
@@ -28,18 +24,10 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light">
-      <TooltipProvider>
-        <AuthProvider>
-          <ScheduleProvider>
-            <NotificationProvider>
-              <Toaster />
-              <Router />
-            </NotificationProvider>
-          </ScheduleProvider>
-        </AuthProvider>
-      </TooltipProvider>
-    </ThemeProvider>
+    <TooltipProvider>
+      <Toaster />
+      <Router />
+    </TooltipProvider>
   );
 }
 
