@@ -1,14 +1,21 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-
 function App() {
   return (
-    <TooltipProvider>
-      <div className="flex h-screen items-center justify-center">
-        <h1 className="text-2xl font-bold">تم رفع الموقع بنجاح!</h1>
+    <div style={{ 
+      display: 'flex', 
+      height: '100vh', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      flexDirection: 'column',
+      fontFamily: 'sans-serif',
+      textAlign: 'center',
+      padding: '20px'
+    }}>
+      <h1 style={{ color: '#0070f3', fontSize: '2rem' }}>مبروك يا بطل! تم الرفع بنجاح 🚀</h1>
+      <p style={{ color: '#666', marginTop: '10px' }}>موقع "مشرف المسائية" أصبح حياً الآن.</p>
+      <div style={{ marginTop: '20px', padding: '15px', background: '#f0f0f0', borderRadius: '8px' }}>
+        <p>هذه نسخة التشغيل الأولية. يمكنك الآن البدء بإضافة ملفاتك الناقصة واحداً تلو الآخر.</p>
       </div>
-      <Toaster />
-    </TooltipProvider>
+    </div>
   );
 }
 
